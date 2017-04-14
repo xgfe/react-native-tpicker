@@ -161,6 +161,10 @@ class CascadePicker extends Component {
     this.choseNumber = this.beforeOpe.slice();
     this.choseValue = this.beforeValue.slice();
 
+    this.setState({
+      passData: this.beforeData
+    })
+
     this._setModalVisible(false, 'cancel');
   }
 
@@ -171,7 +175,7 @@ class CascadePicker extends Component {
    */
   _setEventBegin() {
     if (this.props.enable && (this.props.data.length >= 1)) {
-      this.beforeData = this.props.data.slice();
+      this.beforeData = this.state.passData.slice();
       this.beforeOpe = this.choseNumber.slice();
       this.beforeValue = this.choseValue.slice();
 
