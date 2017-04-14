@@ -54,7 +54,6 @@ class InputOuter extends Component {
           <TouchableWithoutFeedback style={[styles.outerInput, !this.props.enable && {backgroundColor: '#888'}, this.props.inputStyle]} onPress={() => {this.props.onPress();}}>
             <View style={[styles.outerInput, !this.props.enable && {backgroundColor: '#ccc'}, this.props.inputStyle]}>
               <View style={[styles.textInput]}
-                style = {[styles.textInput]}
                 placeholder={this.props.placeholder}
               >
                 <Text style={[styles.inputLabel, this.props.textStyle]}>{this.props.placeholder}</Text>
