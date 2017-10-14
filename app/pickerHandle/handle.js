@@ -1,7 +1,7 @@
 /**
  * 依赖引用
  */
-import React, {Component,PropTypes} from 'react';
+import React, {Component} from 'react';
 import {
     View,
     Text,
@@ -16,6 +16,7 @@ import {
     Modal,
     Image,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './handleStyle';
 
 

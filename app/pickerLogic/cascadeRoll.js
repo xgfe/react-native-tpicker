@@ -1,13 +1,14 @@
 /**
  * 依赖引入
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
     View,
     Text,
     Animated,
     ScrollView
 } from 'react-native';
+import PropTypes from 'prop-types';
 import {rollStyles} from './pickerStyle';
 
 /**

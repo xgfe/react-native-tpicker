@@ -22,6 +22,7 @@
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react-native-vector-icons": "^4.0.0"
   },
   "peerDependencies": {

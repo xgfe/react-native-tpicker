@@ -1,7 +1,7 @@
 /**
  * 依赖引用
  */
-import React, {Component,PropTypes} from 'react';
+import React, {Component} from 'react';
 import {
     View,
     Text,
@@ -16,6 +16,7 @@ import {
     Modal,
     Image,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './outerStyle';
 import Icon from 'react-native-vector-icons/Entypo';
 
@@ -54,7 +55,6 @@ class InputOuter extends Component {
           <TouchableWithoutFeedback style={[styles.outerInput, !this.props.enable && {backgroundColor: '#888'}, this.props.inputStyle]} onPress={() => {this.props.onPress();}}>
             <View style={[styles.outerInput, !this.props.enable && {backgroundColor: '#ccc'}, this.props.inputStyle]}>
               <View style={[styles.textInput]}
-                style = {[styles.textInput]}
                 placeholder={this.props.placeholder}
               >
                 <Text style={[styles.inputLabel, this.props.textStyle]}>{this.props.placeholder}</Text>
