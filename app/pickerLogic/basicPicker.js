@@ -74,7 +74,9 @@ class BasicPicker extends Component {
     //icon name
     iconName: PropTypes.string,
     //icon size
-    iconSize: PropTypes.number
+    iconSize: PropTypes.number,
+    //icon source
+    iconSource: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   };
 
   /**
@@ -264,6 +266,7 @@ class BasicPicker extends Component {
           iconName={this.props.iconName}
           onPress={this._setEventBegin}
           iconStyle={this.props.iconStyle}
+          iconSource={this.props.iconSource}
           enable={this.props.enable}
           placeholder={this.props.inputValue}/>
       </View>
@@ -275,7 +278,7 @@ BasicPicker.defaultProps = {
   visible: false,
   enable: true,
   inputValue: 'please chose',
-  confirmBtnText: '确定',
-  cancelBtnText: '取消'
+  confirmBtnText: 'Done',
+  cancelBtnText: 'Cancel'
 };
 export default BasicPicker;

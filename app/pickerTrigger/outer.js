@@ -18,7 +18,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './outerStyle';
-import Icon from 'react-native-vector-icons/Entypo';
 
 
 /**
@@ -32,7 +31,8 @@ class InputOuter extends Component {
      */
   static propTypes = {
     //传递的数据
-    data: PropTypes.array
+    data: PropTypes.array,
+    iconSource: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   };
 
   /**
@@ -53,14 +53,20 @@ class InputOuter extends Component {
   render(){
     return (
           <TouchableWithoutFeedback style={[styles.outerInput, !this.props.enable && {backgroundColor: '#888'}, this.props.inputStyle]} onPress={() => {this.props.onPress();}}>
-            <View style={[styles.outerInput, !this.props.enable && {backgroundColor: '#ccc'}, this.props.inputStyle]}>
+            <View style={[styles.outerInput, !this.props.enable && {backgroundColor: '#ccc'}, this.props.inputStyle, {marginLeft: 0}]}>
               <View style={[styles.textInput]}
                 placeholder={this.props.placeholder}
               >
                 <Text style={[styles.inputLabel, this.props.textStyle]}>{this.props.placeholder}</Text>
               </View>
-              <Icon name={this.props.iconName ? this.props.iconName : 'calendar'} size={this.props.iconSize ? this.props.iconSize : 18} color="#666" style={[styles.vectorIcon, this.props.iconStyle]}/>
-              {/*<Image source={require('../img/arrow.png')} style={[styles.icon, this.props.iconStyle]}/>    */}
+              {this.props.iconSource ?
+                <Image
+                  style={[styles.icon, this.props.iconStyle]}
+                  source={this.props.iconSource}
+                />
+                :
+                null
+              }
             </View>
            </TouchableWithoutFeedback>
     );
