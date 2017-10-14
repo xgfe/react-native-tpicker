@@ -158,18 +158,28 @@ class BasicPicker extends Component {
    * @private
      */
   _setModalVisible(visible,type) {
-    if (visible){
-      this.setState({visible: visible});
-      Animated.timing(
+    const {height, duration} = this.props;
+
+    // slide animation
+    if (visible) {
+      this.setState({modalVisible: visible});
+      return Animated.timing(
         this.state.animatedHeight,
-        {toValue: height - modalHeight,
-          delay: 300}
+        {
+          toValue: height,
+          duration: duration
+        }
       ).start();
     } else {
-      Animated.timing(
+      return Animated.timing(
         this.state.animatedHeight,
-        {toValue: height}
-      ).start(() => this._changeAnimateStatus(type));
+        {
+          toValue: 0,
+          duration: duration
+        }
+      ).start(() => {
+        this.setState({modalVisible: visible});
+      });
     }
   }
 
@@ -203,7 +213,7 @@ class BasicPicker extends Component {
     return (
       <View style={styles.container}>
         <Modal
-          animationType={this.props.animationType}
+          animationType="none"
           transparent={true}
           visible={this.state.visible}
           onRequestClose={() => {this._setModalVisible(false);}}
