@@ -128,7 +128,8 @@ class BasicPicker extends Component {
      */
   _confirmChose(){
     this.props.data.map((item,index) =>{
-      this.str = this.str +  this.props.data[index][this.select.selectedValue[index]].name;
+      const keys = Object.keys(this.props.data[index]);
+      this.str = this.str + keys[keys.indexOf(this.select.selectedValue[0])];
     });
     this. _setModalVisible(false,'confirm');
     return this.str;
@@ -248,7 +249,8 @@ class BasicPicker extends Component {
                             <PickerItem
                               key={carMake}
                               value={carMake}
-                              label={this.props.data[index][carMake].name}
+                              label={typeof this.props.data[index][carMake].name === 'function'
+                                ? this.props.data[index][carMake].name() : this.props.data[index][carMake].name}
                             />
                           )))
                       }
