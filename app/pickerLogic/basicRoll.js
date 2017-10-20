@@ -188,7 +188,7 @@ class Pickroll extends Component {
     this.items = [];
     Object.keys(this.props.data).map((child,index) =>{
       child === this.props.selectedValue && (this.selectedIndex = index);
-      this.items.push({value: child, label: this.props.data[child].name});
+      this.items.push({value: child, label: typeof this.props.data[child].name === 'function' ? this.props.data[child].name() : this.props.data[child].name});
     });
     this.moveDy = 0;
     this.fingerLeft = false;
