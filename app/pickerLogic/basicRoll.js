@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import {
     View,
+    ViewPropTypes,
     Text,
     Animated,
     ScrollView
@@ -30,7 +31,7 @@ class Pickroll extends Component {
     //选择的值的位置
     selectIndex: PropTypes.number,
     //整个picker的样式
-    pickerStyle: View.propTypes.style,
+    pickerStyle: ViewPropTypes.style,
     //单轮每个格子的样式
     itemAndroidStyle: Text.propTypes.style
   };
@@ -47,7 +48,7 @@ class Pickroll extends Component {
   /**
    * 状态初始化
    * @param props {object} 继承的属性
-   * @returns {{selectedIndex: number, items: Array, pickerStyle:View.propTypes.style, itemStyle:View.propTypes.style, onValueChange: func}}
+   * @returns {{selectedIndex: number, items: Array, pickerStyle: ViewPropTypes.style, itemStyle: View.propTypes.style, onValueChange: func}}
    * @private
      */
 
