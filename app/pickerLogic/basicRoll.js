@@ -1,13 +1,15 @@
 /**
  * 依赖引入
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
     View,
+    ViewPropTypes,
     Text,
     Animated,
     ScrollView
 } from 'react-native';
+import PropTypes from 'prop-types';
 import {rollStyles} from './pickerStyle';
 
 /**
@@ -29,7 +31,7 @@ class Pickroll extends Component {
     //选择的值的位置
     selectIndex: PropTypes.number,
     //整个picker的样式
-    pickerStyle: View.propTypes.style,
+    pickerStyle: ViewPropTypes.style,
     //单轮每个格子的样式
     itemAndroidStyle: Text.propTypes.style
   };
@@ -46,7 +48,7 @@ class Pickroll extends Component {
   /**
    * 状态初始化
    * @param props {object} 继承的属性
-   * @returns {{selectedIndex: number, items: Array, pickerStyle:View.propTypes.style, itemStyle:View.propTypes.style, onValueChange: func}}
+   * @returns {{selectedIndex: number, items: Array, pickerStyle: ViewPropTypes.style, itemStyle: View.propTypes.style, onValueChange: func}}
    * @private
      */
 
@@ -187,7 +189,7 @@ class Pickroll extends Component {
     this.items = [];
     Object.keys(this.props.data).map((child,index) =>{
       child === this.props.selectedValue && (this.selectedIndex = index);
-      this.items.push({value: child, label: this.props.data[child].name});
+      this.items.push({value: child, label: typeof this.props.data[child].name === 'function' ? this.props.data[child].name() : this.props.data[child].name});
     });
     this.moveDy = 0;
     this.fingerLeft = false;

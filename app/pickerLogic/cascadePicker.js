@@ -1,9 +1,10 @@
 /**
  * 依赖引用
  */
-import React, { Component,  PropTypes} from 'react';
+import React, { Component} from 'react';
 import {
   View,
+  ViewPropTypes,
   Text,
   Dimensions,
   Animated,
@@ -14,6 +15,7 @@ import {
   ActivityIndicator,
   Image
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Pickroll from './cascadeRoll';
 import {styles} from './pickerStyle';
 import InputOuter from '../pickerTrigger/outer';
@@ -50,13 +52,13 @@ class CascadePicker extends Component {
     //确认按钮样式
     confirmBtnStyle: Text.propTypes.style,
     //输入框样式
-    inputStyle: View.propTypes.style,
+    inputStyle: ViewPropTypes.style,
     //滚轮头部样式
-    navStyle: View.propTypes.style,
+    navStyle: ViewPropTypes.style,
     //输入框内部字体样式
     textStyle: Text.propTypes.style,
     //右边下拉按钮的样式
-    iconStyle: View.propTypes.style,
+    iconStyle: ViewPropTypes.style,
     //picker的名称
     pickerName: PropTypes.string,
     //输入框内部文字初始值

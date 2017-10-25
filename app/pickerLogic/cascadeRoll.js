@@ -1,13 +1,15 @@
 /**
  * 依赖引入
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
     View,
+    ViewPropTypes,
     Text,
     Animated,
     ScrollView
 } from 'react-native';
+import PropTypes from 'prop-types';
 import {rollStyles} from './pickerStyle';
 
 /**
@@ -29,7 +31,7 @@ class Pickroll extends Component {
     //选择的值的位置
     selectIndex: PropTypes.number,
     //整个picker的样式
-    pickerStyle: View.propTypes.style,
+    pickerStyle: ViewPropTypes,
     //单轮每个格子的样式
     itemAndroidStyle: Text.propTypes.style
   };

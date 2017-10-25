@@ -16,7 +16,7 @@ let styles = StyleSheet.create({
     justifyContent: 'center'
   },
   confirmBtnStyle:{
-    textAlign:'left',
+    textAlign:'right',
     paddingLeft:20,
     paddingRight:20,
     fontSize: 18
@@ -35,7 +35,7 @@ let styles = StyleSheet.create({
     alignItems: 'center'
   },
   cancelBtnStyle: {
-    textAlign:'right',
+    textAlign:'left',
     paddingLeft:20,
     paddingRight:20,
     fontSize: 18

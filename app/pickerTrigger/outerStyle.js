@@ -21,7 +21,6 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     backgroundColor: '#fff',
-    borderRadius: 3
   },
   textInput:{
     flex: 1,

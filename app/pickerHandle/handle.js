@@ -1,7 +1,7 @@
 /**
  * 依赖引用
  */
-import React, {Component,PropTypes} from 'react';
+import React, {Component} from 'react';
 import {
     View,
     Text,
@@ -16,6 +16,7 @@ import {
     Modal,
     Image,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './handleStyle';
 
 
@@ -56,19 +57,19 @@ class Handle extends Component {
   render(){
     return (
           <View style={[styles.nav, this.props.navStyle]}>
-            <TouchableOpacity  style={styles.confirm} onPress={() => {this.props.confirmChose();}}>
-              <Text className={'confirm'}
-                    style={[styles.confirmBtnStyle,this.props.confirmBtnStyle]} >{this.props.confirmBtnText}</Text>
-            </TouchableOpacity>
-            <View style={styles.pickerNameContainer}>
-              <Text style={[styles.pickerName,this.props.pickerNameStyle]}>{this.props.pickerName}</Text>
-            </View>
             <TouchableOpacity style={styles.cancel} onPress={() => {this.props.cancelChose(false, 'cancel');
             }}>
               <Text
                 className={'cancel'}
                 style={[styles.cancelBtnStyle,this.props.cancelBtnStyle]}
               >{this.props.cancelBtnText}</Text>
+            </TouchableOpacity>
+            <View style={styles.pickerNameContainer}>
+              <Text style={[styles.pickerName,this.props.pickerNameStyle]}>{this.props.pickerName}</Text>
+            </View>
+            <TouchableOpacity  style={styles.confirm} onPress={() => {this.props.confirmChose();}}>
+              <Text className={'confirm'}
+                    style={[styles.confirmBtnStyle,this.props.confirmBtnStyle]} >{this.props.confirmBtnText}</Text>
             </TouchableOpacity>
           </View>
     );
